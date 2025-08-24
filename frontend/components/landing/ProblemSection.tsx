@@ -3,7 +3,7 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 
 export function ProblemSection() {
   return (
-    <div className="bg-secondary/20 py-16 md:py-24">
+    <div className="py-16 md:py-24">
       <section id="problem" className="container mx-auto px-4">
         <div className="flex flex-col items-center text-center mb-12">
           <h2 className="text-3xl font-bold tracking-tight sm:text-4xl mb-4">
