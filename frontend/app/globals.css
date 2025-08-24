@@ -251,4 +251,15 @@ body {
   body {
     @apply bg-background text-foreground;
   }
+  
+  /* Text selection styling */
+  ::selection {
+    background-color: var(--primary);
+    color: var(--primary-foreground);
+  }
+  
+  .dark ::selection {
+    background-color: var(--primary);
+    color: var(--primary-foreground);
+  }
 }

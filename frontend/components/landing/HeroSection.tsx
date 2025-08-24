@@ -1,5 +1,4 @@
 import { Button } from "@/components/ui/button";
-import Image from "next/image";
 import Link from "next/link";
 
 export function HeroSection() {
@@ -24,7 +23,6 @@ export function HeroSection() {
         </div>
         <div className="flex justify-center md:justify-end">
           <div className="relative h-[350px] w-full md:h-[450px] md:w-[450px] rounded-2xl overflow-hidden shadow-2xl">
-            {/* Replace with an actual screenshot of your CRM interface */}
             <div className="absolute inset-0 bg-gradient-to-br from-primary to-primary/70 flex items-center justify-center text-primary-foreground text-xl font-medium">
               CRM Dashboard Preview
             </div>
