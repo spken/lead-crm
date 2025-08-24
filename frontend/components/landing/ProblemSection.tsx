@@ -1,9 +1,22 @@
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
+import { CircleDollarSign, PieChart, Clock, BarChart3, FileSpreadsheet, Bell } from "lucide-react";
+
+const problems = [
+  {
+    title: "Enterprise CRMs are too expensive",
+    description: "Enterprise solutions cost up to $300 per user monthly, with excessive features creating unnecessary complexity and steep learning curves.",
+    icon: CircleDollarSign
+  },
+  {
+    title: "Manual tracking doesn't scale",
+    description: "Spreadsheets and emails become unmanageable as your contact list grows, with no reminders or analytics to improve your process.",
+    icon: FileSpreadsheet
+  },
+];
 
 export function ProblemSection() {
   return (
-    <div className="py-16 md:py-24">
+    <div className="py-16 md:py-24 bg-slate-50 dark:bg-slate-900/20">
       <section id="problem" className="container mx-auto px-4">
         <div className="flex flex-col items-center text-center mb-12">
           <h2 className="text-3xl font-bold tracking-tight sm:text-4xl mb-4">
@@ -14,15 +27,10 @@ export function ProblemSection() {
           </p>
         </div>
 
-        <Tabs defaultValue="stats" className="w-full">
-          <TabsList className="grid w-full grid-cols-3 mb-8">
-            <TabsTrigger value="stats">The Stats</TabsTrigger>
-            <TabsTrigger value="costly">Costly CRMs</TabsTrigger>
-            <TabsTrigger value="manual">Manual Methods</TabsTrigger>
-          </TabsList>
-          <TabsContent value="stats" className="space-y-6">
-            <div className="grid gap-4 md:grid-cols-2">
-              <Card>
+        <div className="space-y-12">
+          <div>
+            <div className="grid gap-6 sm:grid-cols-3">
+              <Card className="text-center hover:shadow-md">
                 <CardHeader>
                   <CardTitle className="text-4xl font-bold text-primary">48%</CardTitle>
                 </CardHeader>
@@ -32,7 +40,7 @@ export function ProblemSection() {
                   </CardDescription>
                 </CardContent>
               </Card>
-              <Card>
+              <Card className="text-center hover:shadow-md">
                 <CardHeader>
                   <CardTitle className="text-4xl font-bold text-primary">44%</CardTitle>
                 </CardHeader>
@@ -42,53 +50,38 @@ export function ProblemSection() {
                   </CardDescription>
                 </CardContent>
               </Card>
+              <Card className="text-center hover:shadow-md">
+                <CardHeader>
+                  <CardTitle className="text-4xl font-bold text-primary">80%</CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <CardDescription className="text-base">
+                    of sales require 5-12 follow-ups to close the deal
+                  </CardDescription>
+                </CardContent>
+              </Card>
             </div>
-            <Card className="border-primary">
-              <CardHeader>
-                <CardTitle className="text-4xl font-bold text-primary">80%</CardTitle>
-              </CardHeader>
-              <CardContent>
-                <CardDescription className="text-base">
-                  of sales require 5-12 follow-ups to close the deal
-                </CardDescription>
-              </CardContent>
-            </Card>
-            <p className="text-center text-muted-foreground">
-              Most sales professionals are missing out on 80% of potential sales due to poor follow-up practices.
+            <p className="text-center text-muted-foreground mt-4">
+              Most sales professionals are missing out on <span className="font-medium text-primary">80% of potential sales</span> due to poor follow-up practices.
             </p>
-          </TabsContent>
-          
-          <TabsContent value="costly">
-            <Card>
-              <CardHeader>
-                <CardTitle>Enterprise CRMs are expensive and complex</CardTitle>
-              </CardHeader>
-              <CardContent className="space-y-4">
-                <p>Enterprise CRM solutions can cost up to <span className="font-bold">$300 per user per month</span>, 
-                   putting them out of reach for individual sales professionals and small teams.</p>
-                <p>Even "basic" plans typically start at $7-30 per user monthly, adding up to hundreds or thousands 
-                   of dollars per year.</p>
-                <p>Most enterprise CRMs come with excessive features that sales professionals don't need, 
-                   creating unnecessary complexity and steep learning curves.</p>
-              </CardContent>
-            </Card>
-          </TabsContent>
-          
-          <TabsContent value="manual">
-            <Card>
-              <CardHeader>
-                <CardTitle>Manual tracking methods are ineffective</CardTitle>
-              </CardHeader>
-              <CardContent className="space-y-4">
-                <p>Using spreadsheets, notebooks, or emails to track client interactions becomes inefficient and error-prone as you scale.</p>
-                <p>Without automated reminders, critical follow-ups are often forgotten or delayed.</p>
-                <p>Manual methods provide no analytics or insights to help improve your sales process over time.</p>
-                <p>Real estate agents and sales professionals specifically struggle with organizing lead information
-                   and miss opportunities due to disorganized tracking systems.</p>
-              </CardContent>
-            </Card>
-          </TabsContent>
-        </Tabs>
+          </div>
+
+          <div className="grid gap-8 sm:grid-cols-2">
+            {problems.map((problem, index) => (
+              <Card key={index} className="border shadow-sm transition-all hover:shadow-md">
+                <CardHeader>
+                  <div className="mb-3">
+                    <problem.icon className="h-8 w-8 text-primary" />
+                  </div>
+                  <CardTitle>{problem.title}</CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <CardDescription className="text-base">{problem.description}</CardDescription>
+                </CardContent>
+              </Card>
+            ))}
+          </div>
+        </div>
       </section>
     </div>
   );
