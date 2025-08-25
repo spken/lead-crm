@@ -30,7 +30,7 @@ export function ProblemSection() {
         <div className="space-y-12">
           <div>
             <div className="grid gap-6 sm:grid-cols-3">
-              <Card className="text-center hover:shadow-md">
+              <Card className="text-center transition-all hover:shadow-md">
                 <CardHeader>
                   <CardTitle className="text-4xl font-bold text-primary">48%</CardTitle>
                 </CardHeader>
@@ -40,7 +40,7 @@ export function ProblemSection() {
                   </CardDescription>
                 </CardContent>
               </Card>
-              <Card className="text-center hover:shadow-md">
+              <Card className="text-center transition-all hover:shadow-md">
                 <CardHeader>
                   <CardTitle className="text-4xl font-bold text-primary">44%</CardTitle>
                 </CardHeader>
@@ -50,7 +50,7 @@ export function ProblemSection() {
                   </CardDescription>
                 </CardContent>
               </Card>
-              <Card className="text-center hover:shadow-md">
+              <Card className="text-center transition-all hover:shadow-md">
                 <CardHeader>
                   <CardTitle className="text-4xl font-bold text-primary">80%</CardTitle>
                 </CardHeader>

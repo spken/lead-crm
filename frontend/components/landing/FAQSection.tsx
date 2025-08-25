@@ -49,7 +49,7 @@ export function FAQSection() {
 
       <div className="grid gap-6 md:grid-cols-2">
         {faqs.map((faq, index) => (
-          <Card key={index} className="border shadow-sm">
+          <Card key={index} className="border shadow-sm transition-all hover:shadow-md">
             <CardHeader>
               <CardTitle className="text-lg">{faq.question}</CardTitle>
             </CardHeader>

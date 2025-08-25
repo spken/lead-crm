@@ -68,7 +68,7 @@ export function PricingSection() {
 
       <div className="grid gap-8 md:grid-cols-3">
         {pricingOptions.map((option) => (
-          <Card key={option.name} className={`border relative flex flex-col h-full ${option.popular ? 'border-primary shadow-md' : 'shadow-sm'}`}>
+          <Card key={option.name} className={`border relative flex flex-col h-full transition-all hover:shadow-md ${option.popular ? 'border-primary shadow-md' : 'shadow-sm'}`}>
             {option.popular && (
               <div className="absolute top-0 right-0 bg-primary text-primary-foreground px-3 py-1 text-xs font-medium rounded-bl-lg rounded-tr-lg">
                 Popular
